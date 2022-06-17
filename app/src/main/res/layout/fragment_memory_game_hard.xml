@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMemoryGame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBackToMenu"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_card"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toTopOf="@+id/cv6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cv2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivCard1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv1"
+            app:layout_constraintEnd_toStartOf="@+id/cv1"
+            app:layout_constraintStart_toEndOf="@+id/cv3"
+            app:layout_constraintTop_toTopOf="@+id/cv1">
+
+            <ImageView
+                android:id="@+id/ivCard2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv1"
+            app:layout_constraintEnd_toStartOf="@+id/cv2"
+            app:layout_constraintStart_toEndOf="@+id/cv4"
+            app:layout_constraintTop_toTopOf="@+id/cv1">
+
+            <ImageView
+                android:id="@+id/ivCard3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv1"
+            app:layout_constraintEnd_toStartOf="@+id/cv3"
+            app:layout_constraintStart_toEndOf="@+id/cv5"
+            app:layout_constraintTop_toTopOf="@+id/cv1">
+
+            <ImageView
+                android:id="@+id/ivCard4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv1"
+            app:layout_constraintEnd_toStartOf="@+id/cv4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cv1">
+
+            <ImageView
+                android:id="@+id/ivCard5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_card"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toTopOf="@+id/cv11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cv7"
+            app:layout_constraintTop_toBottomOf="@+id/cv1">
+
+            <ImageView
+                android:id="@+id/ivCard6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv6"
+            app:layout_constraintEnd_toStartOf="@+id/cv6"
+            app:layout_constraintStart_toEndOf="@+id/cv8"
+            app:layout_constraintTop_toTopOf="@+id/cv6">
+
+            <ImageView
+                android:id="@+id/ivCard7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv6"
+            app:layout_constraintEnd_toStartOf="@+id/cv7"
+            app:layout_constraintStart_toEndOf="@+id/cv9"
+            app:layout_constraintTop_toTopOf="@+id/cv6">
+
+            <ImageView
+                android:id="@+id/ivCard8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv6"
+            app:layout_constraintEnd_toStartOf="@+id/cv8"
+            app:layout_constraintStart_toEndOf="@+id/cv10"
+            app:layout_constraintTop_toTopOf="@+id/cv6">
+
+            <ImageView
+                android:id="@+id/ivCard9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv10"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv6"
+            app:layout_constraintEnd_toStartOf="@+id/cv9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cv6">
+
+            <ImageView
+                android:id="@+id/ivCard10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv11"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_card"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toTopOf="@+id/cv16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cv12"
+            app:layout_constraintTop_toBottomOf="@+id/cv6">
+
+            <ImageView
+                android:id="@+id/ivCard11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv12"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv11"
+            app:layout_constraintEnd_toStartOf="@+id/cv11"
+            app:layout_constraintStart_toEndOf="@+id/cv13"
+            app:layout_constraintTop_toTopOf="@+id/cv11">
+
+            <ImageView
+                android:id="@+id/ivCard12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv13"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv11"
+            app:layout_constraintEnd_toStartOf="@+id/cv12"
+            app:layout_constraintStart_toEndOf="@+id/cv14"
+            app:layout_constraintTop_toTopOf="@+id/cv11">
+
+            <ImageView
+                android:id="@+id/ivCard13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv14"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv11"
+            app:layout_constraintEnd_toStartOf="@+id/cv13"
+            app:layout_constraintStart_toEndOf="@+id/cv15"
+            app:layout_constraintTop_toTopOf="@+id/cv11">
+
+            <ImageView
+                android:id="@+id/ivCard14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv15"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv11"
+            app:layout_constraintEnd_toStartOf="@+id/cv14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cv11">
+
+            <ImageView
+                android:id="@+id/ivCard15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv16"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_card"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toTopOf="@+id/cv21"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cv17"
+            app:layout_constraintTop_toBottomOf="@+id/cv11">
+
+            <ImageView
+                android:id="@+id/ivCard16"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv17"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv16"
+            app:layout_constraintEnd_toStartOf="@+id/cv16"
+            app:layout_constraintStart_toEndOf="@+id/cv18"
+            app:layout_constraintTop_toTopOf="@+id/cv16">
+
+            <ImageView
+                android:id="@+id/ivCard17"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv18"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv16"
+            app:layout_constraintEnd_toStartOf="@+id/cv17"
+            app:layout_constraintStart_toEndOf="@+id/cv19"
+            app:layout_constraintTop_toTopOf="@+id/cv16">
+
+            <ImageView
+                android:id="@+id/ivCard18"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv19"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv16"
+            app:layout_constraintEnd_toStartOf="@+id/cv18"
+            app:layout_constraintStart_toEndOf="@+id/cv20"
+            app:layout_constraintTop_toTopOf="@+id/cv16">
+
+            <ImageView
+                android:id="@+id/ivCard19"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv20"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv16"
+            app:layout_constraintEnd_toStartOf="@+id/cv19"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cv16">
+
+            <ImageView
+                android:id="@+id/ivCard20"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv21"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_card"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toTopOf="@+id/cv26"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cv22"
+            app:layout_constraintTop_toBottomOf="@+id/cv16">
+
+            <ImageView
+                android:id="@+id/ivCard21"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv22"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv21"
+            app:layout_constraintEnd_toStartOf="@+id/cv21"
+            app:layout_constraintStart_toEndOf="@+id/cv23"
+            app:layout_constraintTop_toTopOf="@+id/cv21">
+
+            <ImageView
+                android:id="@+id/ivCard22"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv23"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv21"
+            app:layout_constraintEnd_toStartOf="@+id/cv22"
+            app:layout_constraintStart_toEndOf="@+id/cv24"
+            app:layout_constraintTop_toTopOf="@+id/cv21">
+
+            <ImageView
+                android:id="@+id/ivCard23"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv24"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv21"
+            app:layout_constraintEnd_toStartOf="@+id/cv23"
+            app:layout_constraintStart_toEndOf="@+id/cv25"
+            app:layout_constraintTop_toTopOf="@+id/cv21">
+
+            <ImageView
+                android:id="@+id/ivCard24"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv25"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv21"
+            app:layout_constraintEnd_toStartOf="@+id/cv24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cv21">
+
+            <ImageView
+                android:id="@+id/ivCard25"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv26"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_card"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cv27"
+            app:layout_constraintTop_toBottomOf="@+id/cv21">
+
+            <ImageView
+                android:id="@+id/ivCard26"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv27"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv26"
+            app:layout_constraintEnd_toStartOf="@+id/cv26"
+            app:layout_constraintStart_toEndOf="@+id/cv28"
+            app:layout_constraintTop_toTopOf="@+id/cv26">
+
+            <ImageView
+                android:id="@+id/ivCard27"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv28"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv26"
+            app:layout_constraintEnd_toStartOf="@+id/cv27"
+            app:layout_constraintStart_toEndOf="@+id/cv29"
+            app:layout_constraintTop_toTopOf="@+id/cv26">
+
+            <ImageView
+                android:id="@+id/ivCard28"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv29"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv26"
+            app:layout_constraintEnd_toStartOf="@+id/cv28"
+            app:layout_constraintStart_toEndOf="@+id/cv30"
+            app:layout_constraintTop_toTopOf="@+id/cv26">
+
+            <ImageView
+                android:id="@+id/ivCard29"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv30"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv26"
+            app:layout_constraintEnd_toStartOf="@+id/cv29"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cv26">
+
+            <ImageView
+                android:id="@+id/ivCard30"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground" />
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/teko_bold"
+        android:text="60 s"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMoves"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/teko_bold"
+        android:text="0 Moves"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTime"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <TextView
+        android:id="@+id/tvVeredicto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/teko_bold"
+        android:text="YOU LOST"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime" />
+
+    <TextView
+        android:id="@+id/tvBackToMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_card"
+        android:fontFamily="@font/teko_bold"
+        android:padding="8dp"
+        android:text="@string/btn_menu"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVeredicto" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

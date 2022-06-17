@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MEMORY BUTTS</string>
+    <string name="txt_play">PLAY</string>
+    <string name="txt_easy">Easy</string>
+    <string name="txt_medium">Medium</string>
+    <string name="txt_difficult">Difficult</string>
+    <string name="txt_auto_hide">Auto hide</string>
+    <string name="txt_preview">Show preview</string>
+    <string name="txt_you_win">YOU WON!</string>
+    <string name="txt_you_lost">YOU LOST</string>
+    <string name="txt_moves">moves</string>
+    <string name="btn_menu">BACK TO MENU</string>
+
+
+
+    <string name="memorama">memory games</string>
+    <string name="memorama_para_adultos">memory games for adults</string>
+    <string name="con_tiempo">memory card game</string>
+    <string name="sin_anucions">memory match games</string>
+    <string name="sin_internet">match pairs</string>
+    <string name="btn_update">UPDATE</string>
+    <string name="txt_update_app">To continue enjoying this application you must update. Thank you!</string>
+</resources>

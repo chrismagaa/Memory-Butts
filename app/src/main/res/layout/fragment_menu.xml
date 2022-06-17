@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.MenuFragment">
+
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/teko_bold"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="86sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rgDifficulty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppName">
+
+        <RadioButton
+            android:id="@+id/rbEasy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_level_background"
+            android:button="@null"
+            android:checked="true"
+            android:fontFamily="@font/teko_bold"
+            android:gravity="center"
+            android:text="@string/txt_easy"
+            android:textColor="@drawable/selector_level_text_color"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rbMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_level_background"
+            android:button="@null"
+            android:fontFamily="@font/teko_bold"
+            android:text="@string/txt_medium"
+            android:textAlignment="center"
+            android:textColor="@drawable/selector_level_text_color"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rbDifficult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_level_background"
+            android:button="@null"
+            android:fontFamily="@font/teko_bold"
+            android:gravity="center"
+            android:text="@string/txt_difficult"
+            android:textColor="@drawable/selector_level_text_color"
+            android:textSize="20sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvPlay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/background_card"
+        android:fontFamily="@font/teko_bold"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/txt_play"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/switchPreview"
+        style="@android:style/Widget.Material.CompoundButton.Switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:checked="true"
+        android:fontFamily="@font/teko_bold"
+        android:text="@string/txt_preview"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:thumbTint="@color/black"
+        android:thumbTintMode="multiply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgDifficulty" />
+
+    <Switch
+        android:id="@+id/switchAutoHide"
+        style="@android:style/Widget.Material.CompoundButton.Switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:checked="true"
+        android:fontFamily="@font/teko_bold"
+        android:text="@string/txt_auto_hide"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:thumbTint="@color/black"
+        android:thumbTintMode="multiply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchPreview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

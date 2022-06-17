@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MEMORY BUTTS</string>
+    <string name="txt_play">JUGAR</string>
+    <string name="txt_easy">Fácil</string>
+    <string name="txt_medium">Medio</string>
+    <string name="txt_difficult">Difícil</string>
+    <string name="txt_auto_hide">Ocultar automáticamente</string>
+    <string name="txt_preview">Vista previa</string>
+    <string name="txt_you_win">¡GANASTE!</string>
+    <string name="txt_you_lost">PERDISTE</string>
+    <string name="txt_moves">movimientos</string>
+    <string name="btn_menu">VOLVER AL MENÚ</string>
+
+    <string name="btn_update">ACTUALIZAR</string>
+    <string name="txt_update_app">Para seguir disfrutando de esta aplicación debes actualizar. ¡Gracias!.</string>
+
+
+
+    <string name="memorama">memorama</string>
+    <string name="memorama_para_adultos">memorama para adultos</string>
+    <string name="con_tiempo">memorama con tiempo</string>
+    <string name="sin_anucions">memorama sin anuncios</string>
+    <string name="sin_internet">memorama sin internet</string>
+</resources>
