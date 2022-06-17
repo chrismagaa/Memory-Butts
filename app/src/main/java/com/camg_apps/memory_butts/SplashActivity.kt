@@ -14,20 +14,8 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupRemoteConfig()
-    }
+        goToMainActivity()
 
-
-    private fun setupRemoteConfig() {
-        FirebaseRCService.configureRemoteConfig()
-        FirebaseRCService.getAvailableVersion { lastVersion ->
-            val currentVersion = BuildConfig.VERSION_NAME
-            if(lastVersion.toFloat() > currentVersion.toFloat()){
-                showDialogUpdate()
-            }else{
-                goToMainActivity()
-            }
-        }
     }
 
     private fun goToMainActivity() {
@@ -35,19 +23,4 @@ class SplashActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun showDialogUpdate(){
-        val dialog =  UpdateAppDialogFragment{goToPlayStore()}
-        if(!dialog.isAdded){
-            dialog.show(supportFragmentManager, "SHOW DIALOG")
-        }
-    }
-
-    private fun goToPlayStore() {
-        val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(
-                "https://play.google.com/store/apps/details?id="+BuildConfig.APPLICATION_ID)
-            setPackage("com.android.vending")
-        }
-            startActivity(intent)
-    }
 }

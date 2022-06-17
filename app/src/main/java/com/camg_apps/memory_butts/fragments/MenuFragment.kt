@@ -1,22 +1,14 @@
 package com.camg_apps.memory_butts.fragments
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.camg_apps.memory_butts.*
-import com.camg_apps.memory_butts.databinding.DialogUpdateAppBinding
 import com.camg_apps.memory_butts.databinding.FragmentMenuBinding
-import com.google.android.play.core.review.ReviewInfo
-import com.google.android.play.core.review.ReviewManager
-import com.google.android.play.core.review.ReviewManagerFactory
-import com.google.firebase.ktx.Firebase
 
 class MenuFragment : Fragment() {
 
@@ -41,7 +33,6 @@ class MenuFragment : Fragment() {
 
             val showPreview = binding.switchPreview.isChecked
             val autoHide = binding.switchAutoHide.isChecked
-
 
 
             val bundle = bundleOf(MemoryGameFragment.ARG_AMOUNT_PAIRS to difficulty,
