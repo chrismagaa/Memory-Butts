@@ -7,3 +7,8 @@
 
 ## Screenshots
 ![screenshot](https://github.com/chrismagaa/Memory_Butts/blob/master/screenshot.png)
+
+## Descargar
+
+ Desacarga la aplicación .apk [aquí](https://github.com/chrismagaa/Memory-Butts/raw/master/app/release/app-release.apk)
+ 
