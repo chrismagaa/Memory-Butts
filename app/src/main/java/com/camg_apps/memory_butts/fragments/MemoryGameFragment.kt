@@ -1,6 +1,7 @@
 package com.camg_apps.memory_butts.fragments
 
 import android.content.Context
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -66,6 +67,7 @@ class MemoryGameFragment : Fragment() {
                 binding.tvTime.text = "$it s"
                 if (lTime == 0L) {
                     //Pierde
+                    reproducirSonidoDePedoPierde()
                     binding.tvVeredicto.text = getString(R.string.txt_you_lost)
                     binding.tvVeredicto.visibility = View.VISIBLE
                     binding.tvBackToMenu.visibility = View.VISIBLE
@@ -78,11 +80,22 @@ class MemoryGameFragment : Fragment() {
         vmMemoryGame.playGame(requireContext())
         {
             //Gana
+            reproducirSonidoDePedoGanador()
             binding.tvVeredicto.text = getString(R.string.txt_you_win)
             binding.tvVeredicto.visibility = View.VISIBLE
             binding.tvBackToMenu.visibility = View.VISIBLE
             binding.tvBackToMenu.setOnClickListener { findNavController().popBackStack() }
         }
+    }
+
+    private fun reproducirSonidoDePedoPierde() {
+        val mp = MediaPlayer.create(requireContext(), R.raw.pedo_pierde)
+        mp.start()
+    }
+
+    private fun reproducirSonidoDePedoGanador() {
+        val mp = MediaPlayer.create(requireContext(), R.raw.pedo_ganador)
+        mp.start()
     }
 
     private fun setViewLists() {

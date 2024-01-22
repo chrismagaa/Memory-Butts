@@ -1,6 +1,7 @@
 package com.camg_apps.memory_butts
 
 import android.content.Context
+import android.media.MediaPlayer
 import android.os.CountDownTimer
 import android.view.View
 import android.widget.ImageView
@@ -169,6 +170,12 @@ class MemoryGameViewModel : ViewModel() {
                             clicked = 0
                             Toast.makeText(context, gameImageCards[i].name, Toast.LENGTH_SHORT)
                                 .show()
+
+                            //reproducir sonido de pedo con media player
+                            val mp = MediaPlayer.create(context, R.raw.pedo)
+                            mp.start()
+
+
                             countPairs++
                             gameImageCards[i].imageView.isClickable = false
                             gameImageCards[lastClicked].imageView.isClickable = false

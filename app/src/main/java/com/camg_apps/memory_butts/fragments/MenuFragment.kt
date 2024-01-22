@@ -1,5 +1,6 @@
 package com.camg_apps.memory_butts.fragments
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.camg_apps.memory_butts.*
 import com.camg_apps.memory_butts.databinding.FragmentMenuBinding
 
@@ -23,7 +25,13 @@ class MenuFragment : Fragment() {
     ): View {
         _binding = FragmentMenuBinding.inflate(inflater, container, false)
 
+        binding.rgDifficulty.setOnCheckedChangeListener { radioGroup, i ->
+            reproduceSound(R.raw.click)
+        }
+
         binding.tvPlay.setOnClickListener {
+            reproduceSound(R.raw.pedo)
+
             val difficulty = when{
                 binding.rbEasy.isChecked -> MemoryGameViewModel.AMOUNT_PAIRS_EASY
                 binding.rbMedium.isChecked -> MemoryGameViewModel.AMOUNT_PAIRS_MEDIUM
@@ -46,9 +54,10 @@ class MenuFragment : Fragment() {
         return binding.root
     }
 
-
-
-
+    private fun reproduceSound(sonido: Int = R.raw.click) {
+        val mediaPlayer = MediaPlayer.create(requireContext(), sonido)
+        mediaPlayer.start()
+    }
 
 
 }
