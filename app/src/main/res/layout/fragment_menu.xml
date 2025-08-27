@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.MenuFragment">
+    android:background="@color/background"
+    tools:context=".ui.fragments.MenuFragment">
 
 
     <TextView
@@ -13,13 +14,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:fontFamily="@font/teko_bold"
         android:text="@string/app_name"
         android:textColor="@color/black"
         android:textSize="86sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,6 +81,29 @@
     </RadioGroup>
 
     <TextView
+        android:id="@+id/tvRanking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/background_card"
+        android:drawableStart="@drawable/baseline_leaderboard_24"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/teko_bold"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:text="Ranking"
+        android:textAlignment="viewStart"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgDifficulty" />
+
+    <TextView
         android:id="@+id/tvPlay"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -115,6 +137,7 @@
         android:textSize="20sp"
         android:thumbTint="@color/black"
         android:thumbTintMode="multiply"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,9 +158,21 @@
         android:textSize="20sp"
         android:thumbTint="@color/black"
         android:thumbTintMode="multiply"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchPreview" />
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAppName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvAppName"
+        app:layout_constraintTop_toTopOf="@+id/tvAppName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

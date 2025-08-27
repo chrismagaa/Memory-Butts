@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/memoryGameFragment"
-        android:name="com.camg_apps.memory_butts.fragments.MemoryGameFragment"
+        android:name="com.camg_apps.memory_butts.ui.fragments.MemoryGameFragment"
         android:label="fragment_memory_game"
         tools:layout="@layout/fragment_memory_game_hard" />
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.camg_apps.memory_butts.fragments.MenuFragment"
+        android:name="com.camg_apps.memory_butts.ui.fragments.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" />
 </navigation>

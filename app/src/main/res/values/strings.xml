@@ -1,16 +1,15 @@
 <resources>
-    <string name="app_name">MEMORY BUTTS</string>
+    <string name="app_name">PEDORY</string>
     <string name="txt_play">PLAY</string>
     <string name="txt_easy">Easy</string>
     <string name="txt_medium">Medium</string>
-    <string name="txt_difficult">Difficult</string>
+    <string name="txt_difficult">Hard</string>
     <string name="txt_auto_hide">Auto hide</string>
     <string name="txt_preview">Show preview</string>
     <string name="txt_you_win">YOU WON!</string>
     <string name="txt_you_lost">YOU LOST</string>
     <string name="txt_moves">moves</string>
     <string name="btn_menu">BACK TO MENU</string>
-
 
 
     <string name="memorama">memory games</string>
@@ -20,4 +19,28 @@
     <string name="sin_internet">match pairs</string>
     <string name="btn_update">UPDATE</string>
     <string name="txt_update_app">To continue enjoying this application you must update. Thank you!</string>
+
+
+    <string name="ingresa_un_nombre">Enter a name</string>
+
+    <string name="perdiste">YOU LOST</string>
+
+
+    <string name="facil">Easy</string>
+    <string name="medio">Medium</string>
+    <string name="dificil">Hard</string>
+
+    <string name="dificultad">Difficulty</string>
+    <string name="tiempo">Time</string>
+    <string name="movimientos">Moves</string>
+    <string name="puntaje">Points</string>
+
+    <string name="nombre">Name</string>
+
+    <string name="guardar_record">Save points</string>
+
+    <string name="menu_principal">Menu</string>
+
+
+
 </resources>

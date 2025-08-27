@@ -1,8 +1,10 @@
 package com.camg_apps.memory_butts
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.media.MediaPlayer
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
@@ -10,6 +12,15 @@ import androidx.cardview.widget.CardView
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bumptech.glide.Glide
+import com.camg_apps.memory_butts.models.Card
+import com.camg_apps.memory_butts.models.CardModel
+import com.camg_apps.memory_butts.utils.PreferencesKey
+import com.camg_apps.memory_butts.utils.PreferencesProvider
+
+import com.google.gson.reflect.TypeToken
+
+import com.google.gson.Gson
+import java.io.File
 
 class MemoryGameViewModel : ViewModel() {
 
@@ -21,39 +32,12 @@ class MemoryGameViewModel : ViewModel() {
         private val gameCountDownTime: Long = 61000
         private val timeBetweenTurns: Long = 1500
 
-        private val allResourceImages = listOf(
-            "Alien Butt" to R.raw.alien,
-            "Bongo Butt" to R.raw.bongo,
-            "Censored Butt" to R.raw.censored,
-            "Business Butt" to R.raw.business,
-            "Diver Butt" to R.raw.diver,
-            "Cow Butt" to R.raw.cow,
-            "Easter Butt" to R.raw.easter,
-            "Genius Butt" to R.raw.eistein,
-            "Flaming Butt" to R.raw.flaming,
-            "Frankenstein Butt" to R.raw.frankenstein,
-            "Glasses Butt" to R.raw.glasses,
-            "Magic Butt" to R.raw.magic,
-            "Buttless Butt" to R.raw.no,
-            "Pirate Butt" to R.raw.pirate,
-            "Space Butt" to R.raw.space,
-            "Jeans Butt" to R.raw.jeans,
-            "Frida Butthlo" to R.raw.frida,
-            "Superhero Butt" to R.raw.superhero,
-            "Triple Butt" to R.raw.triple,
-            "Thunder Butt" to R.raw.thunder,
-            "Zebra Butt" to R.raw.zebra,
-            "Clapping Butt" to R.raw.clapping,
-            "Flexing Butt" to R.raw.flexing,
-            "Hairy Butt" to R.raw.hair,
-            "Samba Butt" to R.raw.samba,
-            "Seeing Butt" to R.raw.seeing,
-            "Shivering Butt" to R.raw.shivering,
-            "Little Butt" to R.raw.small,
-            "Underwater Butt" to R.raw.underwater,
-            "UX Designer Butt" to R.raw.ux
-        )
+// "Pirate Butt" to R.raw.pirate,
+
     }
+
+    var cards  = listOf<CardModel>()
+
 
 
     private var imageViewList: List<ImageView> = listOf()
@@ -61,21 +45,29 @@ class MemoryGameViewModel : ViewModel() {
     private var amountPairs: Int = 0
 
     private var countDownTimer: CountDownTimer? = null
-    private var showPreview: Boolean? = null
-    private var autoHide: Boolean? = null
+    private var showPreview: Boolean? = true
+    private var autoHide: Boolean? = true
 
     val iMoves = MutableLiveData<Int>()
     val lTime = MutableLiveData<Long>()
     var gameImageCards = mutableListOf<Card>()
     var isGameOver = false
 
+    var filesDir: File? = null
+
+    fun configure(context: Context) {
+        val cardsListJson = PreferencesProvider.string(context, PreferencesKey.CARDS)
+        val type = object : TypeToken<List<CardModel>>() {}.type
+        cards = Gson().fromJson(cardsListJson, type) as List<CardModel>
+        filesDir = context.filesDir
+    }
 
     fun newGame(
         imageViewList: List<ImageView>,
         cardViewList: List<CardView>,
-        amountPairs: Int,
-        showPreview: Boolean,
-        autoHide: Boolean,
+        amountPairs: Int
+    //    showPreview: Boolean,
+   //     autoHide: Boolean,
     ) {
         this.imageViewList = imageViewList
         this.cardViewList = cardViewList
@@ -85,13 +77,13 @@ class MemoryGameViewModel : ViewModel() {
         isGameOver = false
         iMoves.postValue(0)
 
-        val randomResourceImages = getRandomResourceImages()
+        val randomCards = getRandomCards()
 
-        for ((i, image) in randomResourceImages.withIndex()) {
-            gameImageCards.add(
-                Card(image.first, image.second, imageViewList[i], cardViewList[i])
-            )
+        for ((i, card) in randomCards.withIndex()) {
+            gameImageCards.add(Card(card.english_name, card.fileName, imageViewList[i], cardViewList[i]))
         }
+
+        Log.i("MemoryGameViewModel", "newGame: ${gameImageCards.size}")
 
 
         countDownTimer = object : CountDownTimer(gameCountDownTime, 1000) {
@@ -112,7 +104,9 @@ class MemoryGameViewModel : ViewModel() {
         if (showPreview == true) {
             gameImageCards.forEach {
                 it.cardView.visibility = View.VISIBLE
-                Glide.with(context).asGif().load(it.imageResource).into(it.imageView)
+                var fileImage = File(filesDir, it.imageName)
+                Log.i("MemoryGameViewModel", "playGame: $filesDir, ${it.imageName}")
+                Glide.with(context).asGif().load(fileImage).into(it.imageView)
             }
             object : CountDownTimer(3000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
@@ -130,6 +124,7 @@ class MemoryGameViewModel : ViewModel() {
 
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun iniciarLogica(context: Context, onWin: () -> Unit) {
         var clicked = 0
         var lastClicked = -1
@@ -147,7 +142,9 @@ class MemoryGameViewModel : ViewModel() {
                 gameImageCards[i].imageView.setOnClickListener {
 
                     if (!gameImageCards[i].isShowing && !turnOver) {
-                        Glide.with(context).asGif().load(gameImageCards[i].imageResource)
+                        var fileImage = File(filesDir, gameImageCards[i].imageName)
+                        Log.i("MemoryGameViewModel", "playGame: $filesDir, ${gameImageCards[i].imageName}")
+                        Glide.with(context).asGif().load(fileImage)
                             .into(gameImageCards[i].imageView)
                         gameImageCards[i].isShowing = true
 
@@ -165,11 +162,11 @@ class MemoryGameViewModel : ViewModel() {
                     if (clicked == 2 && turnOver == false) {
                         iMoves.postValue(countMoves++)
                         turnOver = true
+
                         //Comprobamos si encontró el par
-                        if (gameImageCards[i].imageResource == gameImageCards[lastClicked].imageResource) {
+                        if (gameImageCards[i].imageName == gameImageCards[lastClicked].imageName) {
                             clicked = 0
-                            Toast.makeText(context, gameImageCards[i].name, Toast.LENGTH_SHORT)
-                                .show()
+
 
                             //reproducir sonido de pedo con media player
                             val mp = MediaPlayer.create(context, R.raw.pedo)
@@ -203,8 +200,10 @@ class MemoryGameViewModel : ViewModel() {
 
     }
 
-    private fun getRandomResourceImages(): MutableList<Pair<String, Int>> {
-        return allResourceImages.asSequence().shuffled().take(amountPairs).toMutableList().apply {
+    private fun getRandomCards(): MutableList<CardModel> {
+
+        Log.i("MemoryGameViewModel", "getRandomCards: ${cards.size}")
+        return cards.asSequence().shuffled().take(amountPairs).toMutableList().apply {
             addAll(this)
             this.shuffle()
         }

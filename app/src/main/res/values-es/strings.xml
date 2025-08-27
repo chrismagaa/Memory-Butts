@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MEMORY BUTTS</string>
+    <string name="app_name">PEDORY</string>
     <string name="txt_play">JUGAR</string>
     <string name="txt_easy">Fácil</string>
     <string name="txt_medium">Medio</string>
@@ -22,4 +22,25 @@
     <string name="con_tiempo">memorama con tiempo</string>
     <string name="sin_anucions">memorama sin anuncios</string>
     <string name="sin_internet">memorama sin internet</string>
+
+
+    <string name="ingresa_un_nombre">Ingresa un nombre</string>
+
+    <string name="perdiste">PERDISTE</string>
+
+
+    <string name="facil">Facil</string>
+    <string name="medio">Medio</string>
+    <string name="dificil">Dificil</string>
+
+    <string name="dificultad">Dificultad</string>
+    <string name="tiempo">Tiempo</string>
+    <string name="movimientos">Movimientos</string>
+    <string name="puntaje">Puntaje</string>
+
+    <string name="nombre">Nombre</string>
+
+    <string name="guardar_record">Guardar puntaje</string>
+
+    <string name="menu_principal">Menu principal</string>
 </resources>
